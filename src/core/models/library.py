@@ -11,3 +11,4 @@ class Library(BaseModel):
     metadata: Dict[str, Any] = Field(
         {}, description="Additional metadata for the library"
     )
+    index: Any = Field(None, description="Index for the library")
