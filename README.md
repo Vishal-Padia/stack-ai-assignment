@@ -50,7 +50,7 @@ This project implements a **Vector Database API** that allows users to index and
 ## Project Structure
 
 ```
-vector-db/
+stack-ai-assignment/
 ├── src/
 │   ├── api/
 │   │   ├── __init__.py
@@ -61,9 +61,6 @@ vector-db/
 │   │   │   ├── documents.py  # Document-related endpoints
 │   │   │   ├── chunks.py     # Chunk-related endpoints
 │   │   │   └── indexing.py   # Indexing-related endpoints
-│   │   └── models/
-│   │       ├── __init__.py
-│   │       └── api_models.py # Pydantic models for API
 │   ├── core/
 │   │   ├── __init__.py
 │   │   ├── models/
@@ -79,7 +76,7 @@ vector-db/
 │   │   └── indexing/
 │   │       ├── __init__.py
 │   │       ├── base.py       # Base indexing class
-│   │       └── algorithms/   # Indexing algorithms
+│   │       └── algorithms/   
 │   │           ├── __init__.py
 │   │           ├── linear_search.py
 │   │           ├── kd_tree.py
@@ -87,16 +84,9 @@ vector-db/
 │   └── utils/
 │       ├── __init__.py
 │       └── concurrent.py     # Concurrency handling
-├── tests/
-│   ├── __init__.py
-│   ├── test_api/
-│   └── test_core/
 ├── deployment/
 │   ├── Dockerfile           # Docker configuration
 │   └── helm/               # Kubernetes deployment files
-│       └── vector-db/
-├── examples/
-│   └── sample_data.py      # Sample data for testing
 ├── requirements.txt
 └── README.md
 ```
