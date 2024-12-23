@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: vector-db
+  repository: vector-db-api
   tag: latest
   pullPolicy: IfNotPresent
 

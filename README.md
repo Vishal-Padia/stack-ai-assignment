@@ -85,9 +85,9 @@ stack-ai-assignment/
 │       ├── __init__.py
 │       └── concurrent.py     # Concurrency handling
 ├── deployment/
-│   ├── Dockerfile           # Docker configuration
 │   └── helm/               # Kubernetes deployment files
 ├── requirements.txt
+├── Dockerfile           # Docker configuration
 └── README.md
 ```
 
