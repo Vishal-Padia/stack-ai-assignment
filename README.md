@@ -141,31 +141,63 @@ stack-ai-assignment/
 
 ### Testing the API
 
-#### Example Requests
+#### Example Inputs for Libraries, Documents, and Chunks
 
-1. **Create a Library**:
-   - **Endpoint**: `POST /libraries/`
-   - **Request Body**:
-     ```json
-     {
-       "id": "lib1",
-       "documents": [],
-       "metadata": {}
-     }
-     ```
+##### 1. **Create a Library**
+- **Endpoint**: `POST /libraries/`
+- **Request Body**:
+  ```json
+  {
+    "id": "lib1",
+    "documents": [],
+    "metadata": {
+      "category": "books",
+      "owner": "John Doe"
+    }
+  }
+  ```
 
-2. **Index the Library**:
-   - **Endpoint**: `POST /indexing/index/lib1?algorithm=linear_search`
+##### 2. **Create a Document**
+- **Endpoint**: `POST /libraries/{library_id}/documents/`
+- **Request Body**:
+  ```json
+  {
+    "id": "doc1",
+    "chunks": [],
+    "metadata": {
+      "title": "Introduction to AI",
+      "author": "Jane Smith"
+    }
+  }
+  ```
 
-3. **Search the Library**:
-   - **Endpoint**: `POST /indexing/search/lib1`
-   - **Request Body**:
-     ```json
-     {
-       "query_embedding": [0.1, 0.2, 0.3],
-       "k": 2
-     }
-     ```
+##### 3. **Create a Chunk**
+- **Endpoint**: `POST /libraries/{library_id}/documents/{document_id}/chunks/`
+- **Request Body**:
+  ```json
+  {
+    "id": "chunk1",
+    "text": "This is the first paragraph of the document.",
+    "embedding": [0.1, 0.2, 0.3],
+    "metadata": {
+      "source": "manual",
+      "tags": ["intro", "AI"]
+    }
+  }
+  ```
+
+##### 4. **Index the Library**
+- **Endpoint**: `POST /indexing/index/{library_id}?algorithm=linear_search`
+
+##### 5. **Search the Library**
+- **Endpoint**: `POST /indexing/search/{library_id}`
+- **Request Body**:
+  ```json
+  {
+    "query_embedding": [0.1, 0.2, 0.3],
+    "k": 2
+  }
+  ```
 
 ---
 
